@@ -3,21 +3,17 @@ def calcular_mcd(a, b):
         a, b = b, a % b
     return a
 
-# Solicitar al usuario que ingrese el primer número, validando que no sea negativo ni cero
-while True:
-    num1 = int(input("Ingresa el primer número (debe ser positivo y diferente de cero): "))
-    if num1 > 0:
-        break
-    else:
-        print("El número debe ser positivo y diferente de cero.")
+def solicitar_numero(mensaje):
+    while True:
+        num = int(input(mensaje))
+        if num > 0:
+            return num
+        else:
+            print("El número debe ser positivo y diferente de cero.")
 
-# Solicitar al usuario que ingrese el segundo número, validando que no sea negativo ni cero
-while True:
-    num2 = int(input("Ingresa el segundo número (debe ser positivo y diferente de cero): "))
-    if num2 > 0:
-        break
-    else:
-        print("El número debe ser positivo y diferente de cero.")
+# Solicitar al usuario que ingrese los dos números
+num1 = solicitar_numero("Ingresa el primer número (debe ser positivo y diferente de cero): ")
+num2 = solicitar_numero("Ingresa el segundo número (debe ser positivo y diferente de cero): ")
 
 # Calcular y mostrar el MCD
 mcd = calcular_mcd(num1, num2)
